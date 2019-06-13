@@ -42,11 +42,14 @@ with open(budget_csv, newline="") as csvfile:
         
         # the greatest decrease in profits
 
-        print("Financial Analysis")
-        print("----------------------------")
-        print("Total Months: " + str(len(total_months)))
-        print("Total Dollars: " + str(total_dollars))
+
+### Use print statements below as a test only ###
         
-#        print("Average Change: " + (average_change))
-#        print("Greatest Increase: " + (greatest_increase))
-#        print("Greatest Decrease: " + (greatest_decrease))
+print("Financial Analysis")
+print("----------------------------")
+print("Total Months: " + str(len(total_months)))
+print("Total Dollars: " + str(total_dollars))
+        
+# print("Average Change: " + (average_change))
+# print("Greatest Increase: " + (greatest_increase))
+# print("Greatest Decrease: " + (greatest_decrease))
