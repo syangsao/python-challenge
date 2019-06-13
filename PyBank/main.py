@@ -23,7 +23,7 @@ with open(budget_csv, newline="") as csvfile:
     csv_header = next(csvreader) 
 
     for row in csvreader:
-        print(csvreader)
+        print(row)
         # calculate the amount of total months
         
         # calculate the total amount in dollars
