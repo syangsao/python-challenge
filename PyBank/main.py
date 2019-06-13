@@ -23,8 +23,9 @@ with open(budget_csv, newline="") as csvfile:
     csv_header = next(csvreader) 
 
     for row in csvreader:
-        print(row)
         # calculate the amount of total months
+        months = row[0]
+        total_months.append(months)
         
         # calculate the total amount in dollars
         
@@ -33,4 +34,12 @@ with open(budget_csv, newline="") as csvfile:
         # the greatest increase in profits 
         
         # the greatest decrease in profits
-    
+
+        print("Financial Analysis")
+        print("----------------------------")
+        print("Total Months: " + str(len(total_months)))
+#        print("Total Months: " + str(len(total_months)))
+#        print("Total: " + (total_dollars))
+#        print("Average Change: " + (average_change))
+#        print("Greatest Increase: " + (greatest_increase))
+#        print("Greatest Decrease: " + (greatest_decrease))
