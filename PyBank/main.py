@@ -9,7 +9,7 @@ budget_csv = os.path.join ('.', 'budget_data.csv')
 
 # Set the empty variables 
 total_months = []
-total_dollars = []
+total_dollars = 0
 average_change = []
 greatest_increase = []
 greatest_decrease = []
@@ -24,10 +24,17 @@ with open(budget_csv, newline="") as csvfile:
 
     for row in csvreader:
         # calculate the amount of total months
-        months = row[0]
-        total_months.append(months)
+        total_months.append(row[0])
+##        total_months += 1
+## https://dfrieds.com/python/read-in-csv-files
+##        print(total_months)      
+##        total_months.append(row[0])
         
         # calculate the total amount in dollars
+        total_dollars += int(row[1])
+#        total_dollars.append(row[1])
+        
+ ##       print(total_dollars)
         
         # what the average change was
         
@@ -38,8 +45,8 @@ with open(budget_csv, newline="") as csvfile:
         print("Financial Analysis")
         print("----------------------------")
         print("Total Months: " + str(len(total_months)))
-#        print("Total Months: " + str(len(total_months)))
-#        print("Total: " + (total_dollars))
+        print("Total Dollars: " + str(total_dollars))
+        
 #        print("Average Change: " + (average_change))
 #        print("Greatest Increase: " + (greatest_increase))
 #        print("Greatest Decrease: " + (greatest_decrease))
