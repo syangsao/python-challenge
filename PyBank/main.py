@@ -3,6 +3,10 @@ import os
 # Import the cvs module
 import csv
 
+## Import operator
+## https://stackoverflow.com/questions/6193498/pythonic-way-to-find-maximum-value-and-its-index-in-a-list
+import operator
+
 # Path to budget_data csv file
 # Note that we are in the same directory structure as this script
 budget_csv = os.path.join ('.', 'budget_data.csv')
@@ -11,8 +15,10 @@ budget_csv = os.path.join ('.', 'budget_data.csv')
 total_months = []
 total_dollars = 0
 average_change = []
-greatest_increase = []
-greatest_decrease = []
+increase_greatest = []
+decrease_greatest = []
+increase_month = []
+decrease_month = []
 
 with open(budget_csv, newline="") as csvfile:
     
@@ -35,21 +41,23 @@ with open(budget_csv, newline="") as csvfile:
         
         # the greatest increase in profits 
         increase = int(row[1])
-        greatest_increase.append(increase)
+        increase_greatest.append(increase)
         
         # the greatest decrease in profits
         decrease = int(row[1])
-        greatest_decrease.append(decrease)
+        decrease_greatest.append(decrease)
 
         # the greatest increase month
-        
-        # the greatest decrease month
-
-print(max(greatest_increase)) #figure out the index
-print(min(greatest_decrease))
+        testmax = (max(enumerate(increase_greatest), key=operator.itemgetter(1)))
                 
-for index, value in enumerate(greatest_increase):
-    print(index, value)
+        # the greatest decrease month
+        testmin = (min(enumerate(decrease_greatest), key=operator.itemgetter(1)))
+
+(max(increase_greatest)) #figure out the index, then apply it to the entire index/line for row[0]
+(min(decrease_greatest)) #figure out the index, then apply it to the entire index/line for row[0]
+                
+#for index, value in enumerate(increase_greatest):
+#    print(max(index, value))
 
 ### Use print statements below as a test only ###
         
@@ -58,8 +66,8 @@ print("----------------------------")
 print("Total Months: " + str(len(total_months)))
 print("Total: $" + str(total_dollars))       
 # print("Average Change: " + (average_change))
-print("Greatest Increase: " + "(" + str(max(greatest_increase)) + ")")
-print("Greatest Decrease: " + "(" + str(min(greatest_decrease)) + ")")
+print("Greatest Increase: " + "(" + str(max(increase_greatest)) + ")")
+print("Greatest Decrease: " + "(" + str(min(decrease_greatest)) + ")")
 
 # Set variable for output file
 output_file = os.path.join("financial_analysis.txt")
