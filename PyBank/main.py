@@ -44,11 +44,7 @@ with open(budget_csv, newline="") as csvfile:
         # the greatest increase month
         
         # the greatest decrease month
-        
-        
-print(max(greatest_increase))
-print(min(greatest_decrease))
-
+                
 ### Use print statements below as a test only ###
         
 print("Financial Analysis")
@@ -56,5 +52,5 @@ print("----------------------------")
 print("Total Months: " + str(len(total_months)))
 print("Total: $" + str(total_dollars))       
 # print("Average Change: " + (average_change))
-print("Greatest Increase: " + "(" + max(greatest_increase) + ")")
-print("Greatest Decrease: " + "(" + min(greatest_decrease) + ")")
+print("Greatest Increase: " + "(" + str(max(greatest_increase)) + ")")
+print("Greatest Decrease: " + "(" + str(min(greatest_decrease)) + ")")
