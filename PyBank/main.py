@@ -44,7 +44,13 @@ with open(budget_csv, newline="") as csvfile:
         # the greatest increase month
         
         # the greatest decrease month
+
+print(max(greatest_increase)) #figure out the index
+print(min(greatest_decrease))
                 
+for index, value in enumerate(greatest_increase):
+    print(index, value)
+
 ### Use print statements below as a test only ###
         
 print("Financial Analysis")
@@ -54,3 +60,10 @@ print("Total: $" + str(total_dollars))
 # print("Average Change: " + (average_change))
 print("Greatest Increase: " + "(" + str(max(greatest_increase)) + ")")
 print("Greatest Decrease: " + "(" + str(min(greatest_decrease)) + ")")
+
+# Set variable for output file
+output_file = os.path.join("financial_analysis.txt")
+
+#  Open the output file
+with open(output_file, "w", newline="") as datafile:
+    writer = csv.writer(datafile)
