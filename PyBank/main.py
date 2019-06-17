@@ -3,7 +3,6 @@ import os
 import csv
 
 # set the path to the file
-
 budget_csv = os.path.join(".","budget_data.csv")
 
 # variable lists 
@@ -17,12 +16,11 @@ total_change_profits = 0
 initial_profit = 0
 
 # open csv file
-
 with open(budget_csv, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
 
-    # Conducting the ask
+    # for loop in the reader
     for row in csvreader:    
       # count the # of months
       count = count + 1 
