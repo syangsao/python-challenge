@@ -6,7 +6,6 @@ import csv
 budget_csv = os.path.join(".","budget_data.csv")
 
 # variable lists 
-
 profit = []
 monthly_changes = []
 date = []
